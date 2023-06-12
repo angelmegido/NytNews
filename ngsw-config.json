@@ -32,7 +32,7 @@
     {
       "name": "news-api",
       "urls": [
-        "https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=0BBFiwYgHvAzEc3OzTw47qmt42F0QTGG/**"
+        "https://api.nytimes.com/**"
       ],
       "cacheConfig": {
         "strategy": "freshness",

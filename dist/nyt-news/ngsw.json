@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1686575280496,
+  "timestamp": 1686577730582,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -48,7 +48,7 @@
     {
       "name": "news-api",
       "patterns": [
-        "https:\\/\\/api\\.nytimes\\.com\\/svc\\/mostpopular\\/v2\\/viewed\\/1\\.json\\?api-key=0BBFiwYgHvAzEc3OzTw47qmt42F0QTGG\\/.*"
+        "https:\\/\\/api\\.nytimes\\.com\\/.*"
       ],
       "strategy": "freshness",
       "maxSize": 10,
