@@ -1,0 +1,57 @@
+<mat-progress-spinner *ngIf="isLoading" mode="indeterminate"></mat-progress-spinner>
+<h1 class="mat-h1 mat-primary">NEWS PORTAL</h1>
+<div class="container" *ngIf="!isLoading; else loading">
+  <div class="button-container">
+    <button mat-icon-button color="primary" (click)="changeViewMode(true)">
+      <mat-icon>view_list</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="changeViewMode(false)">
+      <mat-icon>view_module</mat-icon>
+    </button>
+  </div>
+
+  <!-- VISTA TABLA -->
+  <div *ngIf="viewMode">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Noticias</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let noticia of noticias" @fadeIn>
+          <a routerLink="/noticia/{{noticia.id}}">
+            <td>
+              <img *ngIf="noticia.media && noticia.media[0]['media-metadata'] && noticia.media[0]['media-metadata'][0]; else noImage" [src]="noticia.media[0]['media-metadata'][0].url" alt="Image" height="200px">
+              <ng-template #noImage>
+                <img src="path/to/default/image" alt="Default Image" height="200px">
+              </ng-template>
+              <h3>{{ noticia.title }}</h3>
+            </td>
+          </a>
+
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- VISTA CARDS -->
+  <div *ngIf="!viewMode" class="card-container">
+    <mat-card *ngFor="let noticia of noticias ; let i=index" [@cardAnimation] @fadeIn>
+      <a routerLink="/noticia/{{noticia.id}}">
+        <img mat-card-image *ngIf="noticia.media && noticia.media[0]['media-metadata'] && noticia.media[0]['media-metadata'][2]; else noCardImage" [src]="noticia.media[0]['media-metadata'][2].url" alt="Image">
+        <ng-template #noCardImage>
+          <img mat-card-image src="path/to/default/image" alt="Default Image">
+        </ng-template>
+        <mat-card-title>{{ noticia.title }}</mat-card-title>
+      </a>
+    </mat-card>
+      </div>
+</div>
+
+<ng-template #loading>
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

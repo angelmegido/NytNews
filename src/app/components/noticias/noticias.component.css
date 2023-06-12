@@ -1,0 +1,114 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+mat-progress-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mat-h1,
+.mat-h2,
+.mat-h3 {
+  color: #6A1B9A;
+  padding: auto;
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+mat-card {
+  flex: 0 0 calc(25% - 10px);
+  margin: 5px;
+  display: flex;
+  align-items: center;
+}
+
+mat-card img {
+  height: 200px;
+  width: auto;
+  margin-right: 10px;
+}
+
+mat-card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+  }
+
+  mat-card {
+    flex: 0 0 100%;
+  }
+
+  mat-card img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+/* Vista en Tabla */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  display: flex;
+  align-items: center;
+}
+
+.table img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.table .title {
+  flex-grow: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .table thead {
+    display: none;
+  }
+
+  .table tbody,
+  .table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .table td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    text-align: left;
+    white-space: normal;
+  }
+
+  .table td:before {
+    display: none;
+  }
+}

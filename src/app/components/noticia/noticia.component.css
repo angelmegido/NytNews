@@ -1,0 +1,57 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.content {
+  margin-bottom: 20px;
+}
+
+.details {
+  padding: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.mat-icon-button {
+  color: #3f51b5;
+}
+
+.mat-expansion-panel-header {
+  color: #3f51b5;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.mat-expansion-panel {
+  margin: 10px 0;
+}
+
+.back-button {
+  color: #3f51b5;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-button:hover {
+  color: #ff4081;
+}

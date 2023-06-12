@@ -1,0 +1,34 @@
+
+<div class="container" *ngIf="noticia">
+  <h1>{{ noticia.title }}</h1>
+
+  <div class="header">
+
+    <a [routerLink]="['/noticia', noticia.id]">
+      <img *ngIf="noticia.media && noticia.media[0]['media-metadata'] && noticia.media[0]['media-metadata'][0]; else noImage"
+      [src]="noticia.media[0]['media-metadata'][2].url" alt="Noticia Image">
+      <ng-template #noImage>
+        <img src="path/to/default/image" alt="Default Image">
+      </ng-template>
+    </a>
+  </div>
+
+  <mat-expansion-panel [(expanded)]="showDetails">
+    <mat-expansion-panel-header >
+      <mat-panel-title class="text-center">Details</mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div class="details">
+      <p><strong>URL:</strong> <a [href]="noticia.url" target="_blank">{{ noticia.url }}</a></p>
+      <p><strong>Source:</strong> {{ noticia.source }}</p>
+      <p><strong>Published At:</strong> {{ noticia.published_date }}</p>
+      <p><strong>Section:</strong> {{ noticia.section }}</p>
+    </div>
+  </mat-expansion-panel>
+  <h3>{{ noticia.abstract }}</h3>
+
+  <button mat-icon-button class="back-button" (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</div>
+
